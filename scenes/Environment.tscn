@@ -1,0 +1,87 @@
+[gd_scene load_steps=10 format=3 uid="uid://diugsr52nfy21"]
+
+[ext_resource type="PackedScene" uid="uid://cdo3wnnhj4rht" path="res://scenes/VR_Player.tscn" id="2_elbji"]
+
+[sub_resource type="ProceduralSkyMaterial" id="ProceduralSkyMaterial_8bh76"]
+sky_top_color = Color(0.406957, 0.679143, 0.770227, 1)
+sky_horizon_color = Color(0.129412, 0.27451, 0.321569, 1)
+ground_bottom_color = Color(0.0705882, 0.172549, 0.203922, 1)
+ground_horizon_color = Color(0.128357, 0.275285, 0.320565, 1)
+
+[sub_resource type="Sky" id="Sky_024jg"]
+sky_material = SubResource("ProceduralSkyMaterial_8bh76")
+
+[sub_resource type="Environment" id="Environment_4fwcu"]
+background_mode = 2
+sky = SubResource("Sky_024jg")
+tonemap_mode = 2
+glow_enabled = true
+
+[sub_resource type="BoxMesh" id="BoxMesh_ynvh7"]
+
+[sub_resource type="StandardMaterial3D" id="StandardMaterial3D_u2nlx"]
+albedo_color = Color(0.126141, 0.271388, 0.316147, 1)
+uv1_scale = Vector3(40, 40, 40)
+
+[sub_resource type="StandardMaterial3D" id="StandardMaterial3D_o5nuk"]
+albedo_color = Color(0.164706, 0.266667, 0.580392, 1)
+uv1_scale = Vector3(4, 4, 4)
+
+[sub_resource type="StandardMaterial3D" id="StandardMaterial3D_ypvkr"]
+albedo_color = Color(0.164706, 0.266667, 0.580392, 1)
+uv1_scale = Vector3(4, 4, 4)
+
+[sub_resource type="StandardMaterial3D" id="StandardMaterial3D_bm1ex"]
+albedo_color = Color(0.164706, 0.266667, 0.580392, 1)
+uv1_scale = Vector3(4, 4, 4)
+
+[node name="Environment" type="Node3D"]
+
+[node name="WorldEnvironment" type="WorldEnvironment" parent="."]
+environment = SubResource("Environment_4fwcu")
+
+[node name="LightmapGI" type="DirectionalLight3D" parent="."]
+transform = Transform3D(0.863087, 0.185718, 0.46967, -0.505055, 0.317373, 0.802617, 0, -0.929937, 0.367718, 12.7402, 7.20464, 12.4909)
+shadow_enabled = true
+directional_shadow_mode = 0
+
+[node name="Map" type="Node" parent="."]
+
+[node name="Floor" type="CSGMesh3D" parent="Map"]
+transform = Transform3D(30, 0, 0, 0, 1, 0, 0, 0, 30, 0, -1, 0)
+use_collision = true
+mesh = SubResource("BoxMesh_ynvh7")
+material = SubResource("StandardMaterial3D_u2nlx")
+
+[node name="Cube" type="CSGMesh3D" parent="Map"]
+transform = Transform3D(8, 0, 0, 0, 4, 0, 0, 0, 6, 10.741, 1.5, 11.5893)
+use_collision = true
+mesh = SubResource("BoxMesh_ynvh7")
+material = SubResource("StandardMaterial3D_o5nuk")
+
+[node name="Cube2" type="CSGMesh3D" parent="Map"]
+transform = Transform3D(18, 0, 0, 0, 6, 0, 0, 0, 0.3, -0.0284581, 2.5, -12.4522)
+use_collision = true
+mesh = SubResource("BoxMesh_ynvh7")
+material = SubResource("StandardMaterial3D_ypvkr")
+
+[node name="Cube3" type="CSGMesh3D" parent="Map"]
+transform = Transform3D(6, 0, 0, 0, 4, 0, 0, 0, 4, -7.30531, 1.33263, 5.80009)
+use_collision = true
+mesh = SubResource("BoxMesh_ynvh7")
+material = SubResource("StandardMaterial3D_bm1ex")
+
+[node name="Cube4" type="CSGMesh3D" parent="Map"]
+transform = Transform3D(4, 0, 0, 0, 2, 0, 0, 0, 6, 11.137, 0.5, -3.643)
+use_collision = true
+mesh = SubResource("BoxMesh_ynvh7")
+material = SubResource("StandardMaterial3D_o5nuk")
+
+[node name="Cube5" type="CSGMesh3D" parent="Map"]
+transform = Transform3D(2, 0, 0, 0, 12, 0, 0, 0, 2, -11.4492, 5.5, -5.741)
+use_collision = true
+mesh = SubResource("BoxMesh_ynvh7")
+material = SubResource("StandardMaterial3D_o5nuk")
+
+[node name="Player" parent="." instance=ExtResource("2_elbji")]
+transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, -0.343539, 0.484053, -0.616339)

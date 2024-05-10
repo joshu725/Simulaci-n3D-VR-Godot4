@@ -1,0 +1,17 @@
+fc8a56933c4b1c8d796fdb8f7a9f9475
+::res://::1715366307
+export_presets.cfg::TextFile::-1::1715364325::0::1::::<><>::
+icon.svg::CompressedTexture2D::3046566525527262917::1715359219::1715359219::1::::<><>::
+README.md::TextFile::-1::1715364783::0::1::::<><>::
+::res://assets/::1715364163
+img.jpg::CompressedTexture2D::8907084568084176052::1715364154::1715364163::1::::<><>::
+::res://ejecutable/::1715364674
+::res://img/::1715364782
+image-1.png::CompressedTexture2D::3753321983817001213::1715364782::1715366308::1::::<><>::
+image.png::CompressedTexture2D::8616853261786707353::1715364767::1715366308::1::::<><>::
+::res://scenes/::1715364305
+Environment.tscn::PackedScene::7762457741997083624::1715364305::0::1::::<><>::uid://cdo3wnnhj4rht::::res://scenes/VR_Player.tscn
+VR_Player.tscn::PackedScene::5014049253337748829::1715363909::0::1::::<><>::res://scripts/VR_player_controller.gd<>res://scripts/VR_camera.gd
+::res://scripts/::1715363477
+VR_camera.gd::GDScript::-1::1715363477::0::1::::<>Camera3D<>::
+VR_player_controller.gd::GDScript::-1::1715359230::0::1::::<>CharacterBody3D<>::
